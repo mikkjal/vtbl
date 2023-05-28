@@ -1,5 +1,7 @@
 # vtbl
 
+A versatile and customizable table component for Vue 3.
+
 ## Installation
 
 ```bash
@@ -22,77 +24,77 @@ If you don't want the default styling, you can add this comment somewhere in you
 
 ```html
 <template>
-    <!-- Simple usage -->
-    <VTable :items="items" />
+	<!-- Simple usage -->
+	<VTable :items="items" />
 
-    <!-- Selected fields only -->
-    <VTable
-        :items="items"
-        :fields="(['id', 'name', 'email', 'address.city'] as const)"
-    />
+	<!-- Selected fields only -->
+	<VTable
+		:items="items"
+		:fields="(['id', 'name', 'email', 'address.city'] as const)"
+	/>
 
-    <!-- Align columns -->
-    <VTable
-        :items="items"
-        :align="{
+	<!-- Align columns -->
+	<VTable
+		:items="items"
+		:align="{
             id: 'center'
         }"
-    />
+	/>
 
-    <!-- Modify title -->
-    <VTable
-        :items="items"
-        :title="{
+	<!-- Modify title -->
+	<VTable
+		:items="items"
+		:title="{
             'address.city': 'City',
         }"
-    />
+	/>
 
-    <!-- Translate titles with vue-i18n -->
-    <VTable
-        :items="items"
-        :map-titles="$t"
-    />
+	<!-- Translate titles with vue-i18n -->
+	<VTable
+		:items="items"
+		:map-titles="$t"
+	/>
 
-    <!-- Clickable -->
-    <VTable
-        :items="items"
-        @click="handleClick"
-        class="clickable"
-    />
+	<!-- Clickable -->
+	<VTable
+		:items="items"
+		@click="handleClick"
+		class="clickable"
+	/>
 
-    <!-- Orderable -->
-    <VTable
-        :items="items"
-        :orderable="['id', 'name']"
-        v-model:order-by="orderBy"
-    />
+	<!-- Orderable -->
+	<VTable
+		:items="items"
+		:orderable="['id', 'name']"
+		v-model:order-by="orderBy"
+	/>
 
-    <!-- Selectable -->
-    <VTable
-        :items="items"
-        selectable
-        v-model:selected="selectedItemIds"
-    />
+	<!-- Selectable -->
+	<VTable
+		:items="items"
+		selectable
+		v-model:selected="selectedItemIds"
+	/>
 
-    <!-- Sortable -->
-    <VTable
-        :items="items"
-        sortable
-        @sort="handleSort"
-    >
-        <template #handle>
-            <!-- If you want to change the handle, add your custom handle content here -->
-        </template>
-    </VTable>
+	<!-- Sortable -->
+	<VTable
+		:items="items"
+		sortable
+		@sort="handleSort"
+	>
+		<template #handle>
+			<!-- If you want to change the handle, add your custom handle content here -->
+		</template>
+	</VTable>
 
-    <!-- Replace column with component -->
-    <VTable :items="items">
-        <template #name="{ item }">
-            <td>
-                <SomeComponent :name="item.name" />
-            </td>
-        </template>
-    </VTable>
+	<!-- Replace column with component -->
+	<VTable :items="items">
+		<template #name="{ item }">
+			<td>
+				<SomeComponent :name="item.name" />
+			</td>
+		</template>
+	</VTable>
 </template>
 ```
 
@@ -100,47 +102,47 @@ If you don't want the default styling, you can add this comment somewhere in you
 
 ```html
 <template>
-    <VTable
-        :items="items"
-        :fields="(['id', 'name', 'email', 'address.city'] as const)"
-        :align="{
+	<VTable
+		:items="items"
+		:fields="(['id', 'name', 'email', 'address.city'] as const)"
+		:align="{
             id: 'left',
             name: 'center',
             email: 'right',
             'address.city': 'center'
         }"
-        :title="{
+		:title="{
             'address.city': 'City'
         }"
-        :mapTitles="(title) => title.toUpperCase()"
-        :orderable="['id', 'name']"
-        v-model:order-by="orderBy"
-        selectable
-        v-model:selected="selectedItemIds"
-        sortable
-        @click="handleClick"
-        @sort="handleSort"
-    >
-        <template #handle>
-            <!-- Add your custom handle content here -->
-        </template>
+		:mapTitles="(title) => title.toUpperCase()"
+		:orderable="['id', 'name']"
+		v-model:order-by="orderBy"
+		selectable
+		v-model:selected="selectedItemIds"
+		sortable
+		@click="handleClick"
+		@sort="handleSort"
+	>
+		<template #handle>
+			<!-- Add your custom handle content here -->
+		</template>
 
-        <template #thead="{ }">
-            <!-- Add your custom thead content here -->
-        </template>
+		<template #thead="{ }">
+			<!-- Add your custom thead content here -->
+		</template>
 
-        <template #tbody="{ item }">
-            <!-- Add your custom tbody content here -->
-        </template>
+		<template #tbody="{ item }">
+			<!-- Add your custom tbody content here -->
+		</template>
 
-        <template #name="{ item }">
-            <!-- Add your custom name field content here -->
-        </template>
+		<template #name="{ item }">
+			<!-- Add your custom name field content here -->
+		</template>
 
-        <template #address.city="{ item }">
-            <!-- Add your custom city field content here -->
-        </template>
-    </VTable>
+		<template #address.city="{ item }">
+			<!-- Add your custom city field content here -->
+		</template>
+	</VTable>
 </template>
 ```
 
