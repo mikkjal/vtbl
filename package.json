@@ -1,7 +1,13 @@
 {
 	"name": "vtbl",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
+	"homepage": "https://github.com/mikkjal/vtbl",
+	"keywords": [
+		"vue",
+		"table"
+	],
+	"license": "MIT",
 	"files": [
 		"dist"
 	],
