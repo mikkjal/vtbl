@@ -1,0 +1,35 @@
+.v-table {
+	@apply text-sm;
+}
+
+.v-table th {
+	@apply px-3 py-1.5 text-xs font-normal uppercase text-gray-400 dark:hover:text-gray-300;
+}
+
+.v-table td {
+	@apply p-3;
+}
+
+.v-table.clickable td {
+	@apply cursor-pointer;
+}
+
+.v-table a {
+	@apply font-bold hover:text-gray-900 dark:hover:text-gray-400;
+}
+
+.v-table tr td {
+	@apply first-of-type:rounded-l-lg last-of-type:rounded-r-lg;
+}
+
+.v-table tr:nth-child(odd) td {
+	@apply bg-gray-50 dark:bg-gray-900/40;
+}
+
+.v-table tr:hover td {
+	@apply bg-gray-200/60 dark:bg-gray-900/60;
+}
+
+.v-table input[type='checkbox'] {
+	@apply rounded border-gray-300 checked:border-blue-500;
+}

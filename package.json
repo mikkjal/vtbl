@@ -1,0 +1,44 @@
+{
+	"name": "vtbl",
+	"version": "1.0.0",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/vtbl.umd.cjs",
+	"module": "./dist/vtbl.js",
+	"exports": {
+		".": {
+			"import": "./dist/vtbl.js",
+			"require": "./dist/vtbl.umd.cjs"
+		},
+		"./style.css": {
+			"import": "./dist/style.css"
+		}
+	},
+	"types": "./dist/vtbl.d.ts",
+	"scripts": {
+		"build": "run-p type-check build-only emit",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
+		"emit": "vue-tsc --declaration --emitDeclarationOnly"
+	},
+	"dependencies": {
+		"sortablejs": "^1.15.0",
+		"vue": "^3.3.2"
+	},
+	"devDependencies": {
+		"@tsconfig/node18": "^2.0.1",
+		"@types/node": "^18.16.8",
+		"@types/sortablejs": "^1.15.1",
+		"@vitejs/plugin-vue": "^4.2.3",
+		"@vue/tsconfig": "^0.4.0",
+		"autoprefixer": "^10.4.14",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.23",
+		"tailwindcss": "^3.3.2",
+		"typescript": "~5.0.4",
+		"vite": "^4.3.5",
+		"vue-tsc": "^1.6.4"
+	}
+}
