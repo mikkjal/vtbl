@@ -216,7 +216,7 @@ function getItemAtIndex(index: number): Type {
 			<tr
 				v-for="(item, index) in items"
 				:key="item.id"
-				@click.stop="$emit('click', item)"
+				@click.stop="$emit('click', getItemAtIndex(index))"
 				:data-id="item.id"
 				class="draggable group"
 			>
