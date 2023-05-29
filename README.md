@@ -9,7 +9,7 @@ npm i vtbl
 ```
 
 ```typescript
-import VTable from '@vtbl';
+import VTable from 'vtbl';
 
 import 'vtbl/style.css'; // Optional
 ```

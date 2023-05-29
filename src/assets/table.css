@@ -23,11 +23,11 @@
 }
 
 .v-table tr:nth-child(odd) td {
-	@apply bg-gray-50 dark:bg-gray-900/40;
+	@apply bg-black/5 dark:bg-white/5;
 }
 
 .v-table tr:hover td {
-	@apply bg-gray-200/60 dark:bg-gray-900/60;
+	@apply bg-black/10 dark:bg-white/10;
 }
 
 .v-table input[type='checkbox'] {
