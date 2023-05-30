@@ -18,6 +18,7 @@ const props = defineProps<{
 	orderBy?: OrderBy;
 	selectable?: boolean;
 	selected?: (number | string)[];
+	selectedModifiers?: any;
 	sortable?: boolean;
 	mapTitles?: (title: TFields[number]) => string;
 }>();
@@ -46,6 +47,7 @@ defineSlots<
 // Data
 
 const element = ref(null);
+const idField = props.selectedModifiers ? Object.keys(props.selectedModifiers)[0] : 'id';
 
 // Lifecycle Hooks
 
@@ -115,7 +117,7 @@ const allRowsAreSelected = computed({
 			return;
 		}
 
-		selected.value = props.items.map((entry: any) => entry.id);
+		selected.value = props.items.map((entry: any) => entry[idField]);
 	},
 });
 
@@ -132,13 +134,13 @@ function getFieldFromRow(field: string, row: Type) {
 }
 
 function toggleRow(row: any): void {
-	if (selected.value?.includes(row.id)) {
-		selected.value = selected.value?.filter((rowId) => rowId != row.id);
+	if (selected.value?.includes(row[idField])) {
+		selected.value = selected.value?.filter((rowId) => rowId != row[idField]);
 
 		return;
 	}
 
-	selected.value = [...(selected.value || []), row.id];
+	selected.value = [...(selected.value || []), row[idField]];
 }
 
 function getItemAtIndex(index: number): Type {
@@ -215,9 +217,9 @@ function getItemAtIndex(index: number): Type {
 		<tbody ref="element">
 			<tr
 				v-for="(item, index) in items"
-				:key="item.id"
+				:key="item[idField]"
 				@click.stop="$emit('click', getItemAtIndex(index))"
-				:data-id="item.id"
+				:data-id="item[idField]"
 				class="draggable group"
 			>
 				<td
@@ -250,7 +252,7 @@ function getItemAtIndex(index: number): Type {
 				>
 					<input
 						type="checkbox"
-						:checked="selected?.includes(item.id)"
+						:checked="selected?.includes(item[idField])"
 						@click.stop="toggleRow(item)"
 					/>
 				</td>
