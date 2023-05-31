@@ -18,7 +18,7 @@ const props = defineProps<{
 	orderBy?: OrderBy;
 	selectable?: boolean;
 	selected?: (number | string)[];
-	selectedModifiers?: any;
+	selectedModifiers?: { [key: string]: boolean };
 	sortable?: boolean;
 	mapTitles?: (title: TFields[number]) => string;
 }>();
