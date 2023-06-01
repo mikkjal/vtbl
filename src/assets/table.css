@@ -1,35 +1,40 @@
 .v-table {
-	@apply text-sm;
+	font-size: 0.9rem;
 }
 
 .v-table th {
-	@apply px-3 py-1.5 text-xs font-normal uppercase text-gray-400 dark:hover:text-gray-300;
+	padding: 0.5rem 0.75rem;
+
+	font-size: 0.8rem;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 .v-table td {
-	@apply p-3;
+	padding: 0.75rem;
 }
 
 .v-table.clickable td {
-	@apply cursor-pointer;
+	cursor: pointer;
 }
 
-.v-table a {
-	@apply font-bold hover:text-gray-900 dark:hover:text-gray-400;
+.v-table tr td:first-of-type {
+	border-radius: 8px 0 0 8px;
 }
 
-.v-table tr td {
-	@apply first-of-type:rounded-l-lg last-of-type:rounded-r-lg;
+.v-table tr td:last-of-type {
+	border-radius: 0 8px 8px 0;
 }
 
 .v-table tr:nth-child(odd) td {
-	@apply bg-black/5 dark:bg-white/5;
+	background: rgba(0, 0, 0, 0.05);
 }
 
 .v-table tr:hover td {
-	@apply bg-black/10 dark:bg-white/10;
+	background: rgba(0, 0, 0, 0.1);
 }
 
-.v-table input[type='checkbox'] {
-	@apply rounded border-gray-300 checked:border-blue-500;
+.v-table input {
+	border-radius: 4px;
+	border: 1px solid lightgrey;
 }

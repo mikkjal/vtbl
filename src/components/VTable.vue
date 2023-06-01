@@ -52,22 +52,7 @@ const idField = props.selectedModifiers ? Object.keys(props.selectedModifiers)[0
 // Lifecycle Hooks
 
 onMounted(() => {
-	if (!element.value) {
-		return;
-	}
-
-	// Add sortable
-	new Sortable(element.value, {
-		handle: '.handle',
-		animation: 175,
-		draggable: '.draggable',
-
-		onEnd(e) {
-			arrayMove(props.items, e.oldIndex || 0, e.newIndex || 0);
-
-			emit('sort', props.items);
-		},
-	});
+	initSortable();
 });
 
 // Computed
@@ -122,6 +107,24 @@ const allRowsAreSelected = computed({
 });
 
 // Functions
+
+function initSortable() {
+	if (!element.value) {
+		return;
+	}
+
+	new Sortable(element.value, {
+		handle: '.handle',
+		animation: 175,
+		draggable: '.draggable',
+
+		onEnd(e) {
+			arrayMove(props.items, e.oldIndex || 0, e.newIndex || 0);
+
+			emit('sort', props.items);
+		},
+	});
+}
 
 function getTitle(field: string): string {
 	const title = (props.title as any)?.[field] ?? field;
