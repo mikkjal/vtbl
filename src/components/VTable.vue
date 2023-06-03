@@ -1,8 +1,6 @@
 <script setup lang="ts" generic="Type, TFields extends readonly string[]">
 import { computed, onMounted, ref } from 'vue';
 
-import Sortable from 'sortablejs';
-
 import { arrayMove, flatten } from '../helpers';
 
 type OrderBy = [string, 'asc' | 'desc'];
@@ -52,7 +50,9 @@ const idField = props.selectedModifiers ? Object.keys(props.selectedModifiers)[0
 // Lifecycle Hooks
 
 onMounted(() => {
-	initSortable();
+	if (props.sortable) {
+		initSortable();
+	}
 });
 
 // Computed
@@ -108,10 +108,12 @@ const allRowsAreSelected = computed({
 
 // Functions
 
-function initSortable() {
+async function initSortable() {
 	if (!element.value) {
 		return;
 	}
+
+	const Sortable = (await import('sortablejs')).default;
 
 	new Sortable(element.value, {
 		handle: '.handle',

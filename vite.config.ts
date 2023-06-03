@@ -34,6 +34,7 @@ export default defineConfig({
 			entry: resolve(__dirname, './src/vtbl.ts'),
 			name: 'VTable',
 			fileName: 'vtbl',
+			formats: ['es'],
 		},
 		rollupOptions: {
 			external: ['vue'],
