@@ -1,3 +1,10 @@
+## 1.0.9 (01-06-2023)
+
+### Features
+
+-   dynamically import `sortablejs`
+-   add documentation
+
 ## 1.0.7 (01-06-2023)
 
 ### Features

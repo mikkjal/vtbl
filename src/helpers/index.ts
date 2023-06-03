@@ -1,3 +1,11 @@
+/**
+ * Flatten an object.
+ * { name: 'Example', job: { title: 'Test' } }
+ * Becomes: { name: 'Example', 'job.title': 'Test' }
+ * @param object
+ * @param prefix
+ * @returns
+ */
 export function flatten<T extends object>(object: T, prefix = ''): any {
 	return Object.entries(object).reduce((previous: any, current: any) => {
 		const [key, value] = current;
@@ -14,32 +22,12 @@ export function flatten<T extends object>(object: T, prefix = ''): any {
 	}, {});
 }
 
-export function restore(flatObject: any) {
-	const result: any = {};
-
-	for (const flatKey in flatObject) {
-		const nestedKeys = flatKey.split('.');
-
-		let currentNode = result;
-
-		for (let i = 0; i < nestedKeys.length - 1; i++) {
-			const key = nestedKeys[i];
-
-			if (!currentNode[key]) {
-				currentNode[key] = {};
-			}
-
-			currentNode = currentNode[key];
-		}
-
-		const leafKey = nestedKeys[nestedKeys.length - 1];
-
-		currentNode[leafKey] = flatObject[flatKey];
-	}
-
-	return result;
-}
-
+/**
+ * Move an element in an array.
+ * @param array
+ * @param from
+ * @param to
+ */
 export function arrayMove(array: any[], from: number, to: number): void {
 	let element = array[from];
 

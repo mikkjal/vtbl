@@ -1,5 +1,5 @@
 {
-	"include": ["src/vtbl.ts", "./src/components/VTable.vue"],
+	"include": ["src/vtbl.ts", "src/helpers/index.ts", "src/components/VTable.vue"],
 	"exclude": ["**/*.spec.ts"],
 	"compilerOptions": {
 		"outDir": "./dist",
