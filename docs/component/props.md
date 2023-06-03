@@ -194,4 +194,6 @@ function sortItems(items: Items) {
 </template>
 ```
 
-`VTable` uses `sortablejs` to sort the table rows.
+::: info sortablejs
+`VTable` uses `sortablejs` to sort the rows.
+:::

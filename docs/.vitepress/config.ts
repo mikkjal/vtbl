@@ -7,7 +7,7 @@ export default defineConfig({
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [{ text: 'Get Started', link: '/installation' }],
-
+		logo: '/logo.png',
 		sidebar: [
 			{
 				text: 'Introduction',
@@ -42,7 +42,6 @@ export default defineConfig({
 				],
 			},
 		],
-
 		socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
 	},
 });
