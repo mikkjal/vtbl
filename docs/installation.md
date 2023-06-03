@@ -1,10 +1,10 @@
 # Installation
 
-To integrate and use `vtbl` in your Vue application, follow the steps outlined in this section.
+To integrate and use `VTable` in your Vue application, follow the steps outlined in this section.
 
 ## Install with NPM
 
-To install the `vtbl` library, run the following command in your terminal:
+To install `VTable`, run the following command in your terminal:
 
 ```bash
 npm i vtbl
@@ -12,7 +12,7 @@ npm i vtbl
 
 ## Import
 
-After installing `vtbl`, you can import it into individual Vue components or views like this:
+After installing `VTable`, you can import it into individual Vue components or views like this:
 
 ```vue{4,5}
 <script setup lang="ts">
@@ -29,7 +29,7 @@ const items = ref([]);
 </template>
 ```
 
-## Use Globally
+## Register Globally
 
 You might want to use `VTable` across many parts of your application. To do this, you can register it globally in your `main.ts` file and declare its type in the `env.d.ts` file.
 

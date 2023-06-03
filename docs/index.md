@@ -4,10 +4,13 @@ layout: home
 
 hero:
     name: 'VTable'
-    text: 'Versatile and customizable'
-    tagline: Versatile and customizable table component for Vue 3.
+    text: 'Dynamic Tables in Vue 3'
+    tagline: A flexible and powerful table component offering unparalleled customization and interactivity.
     actions:
         - theme: brand
           text: Get Started
           link: /installation
+        - theme: alt
+          text: Learn More
+          link: /component/reference
 ---

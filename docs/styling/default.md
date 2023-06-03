@@ -1,6 +1,6 @@
 # Default Styles
 
-`vtbl` includes a set of default styles that provide a clean, modern look and feel to your tables.
+`VTable` includes a set of default styles that provide a clean, modern look and feel to your tables.
 
 ## Import
 

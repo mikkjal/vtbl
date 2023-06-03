@@ -1,6 +1,6 @@
 # Custom Styles
 
-While `vtbl` provides its own default styles, you have complete freedom to override them or define your own from scratch.
+While `VTable` provides its own default styles, you have complete freedom to override them or define your own from scratch.
 
 To use your custom styles, **simply don't import `vtbl/style.css`**.
 

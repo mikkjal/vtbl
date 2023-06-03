@@ -2,18 +2,18 @@
 
 ## Simple Usage
 
-The following Vue component outlines the most basic usage of `vtbl`:
+The following Vue component outlines the most basic usage of `VTable`:
 
-```vue{14}
+```vue{4,14}
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-import { UserService } from '@/services/user.service';
+import VTable from 'vtbl';
 
 const users = ref([]);
 
 onMounted(async () => {
-	users.value = await UserService.all();
+	users.value = await fetchUsers();
 });
 </script>
 

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-	title: 'vtbl',
+	title: 'VTable',
 	description: 'A Vue 3 Component',
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
@@ -24,8 +24,8 @@ export default defineConfig({
 					{ text: 'Props', link: '/component/props' },
 					{ text: 'Emits', link: '/component/emits' },
 					{ text: 'Slots', link: '/component/slots' },
-					{ text: 'Structure', link: '/component/structure' },
 					{ text: 'Everything, All at Once', link: '/component/full' },
+					{ text: 'Reference', link: '/component/reference' },
 				],
 			},
 			{

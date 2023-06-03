@@ -8,7 +8,6 @@ This prop is used to pass the data that will be displayed in the table:
 <template>
     <VTable
         :items="items"
-        :fields="['id', 'name', 'email', 'address.city']"
     />
 </template>
 ```
@@ -87,7 +86,7 @@ You can integrate this with the `vue-i18n` library for internationalization:
 
 ## Map Titles
 
-The `map-titles` prop can be used to apply a function to all titles:
+The `map-titles` prop can be used to apply a function to all titles. For example, you can translate all the titles with `vue-i18n` like this:
 
 ```vue{5}
 <template>
@@ -99,14 +98,14 @@ The `map-titles` prop can be used to apply a function to all titles:
 </template>
 ```
 
-For example, to add a prefix to all titles:
+Or if you want to add `my-table` as a prefix:
 
 ```vue{5}
 <template>
     <VTable
         :items="items"
         :fields="(['id', 'name', 'email', 'address.city'] as const)"
-        :map-titles="(title) => $t(`user-table.${title}`)"
+        :map-titles="(title) => $t(`my-table.${title}`)"
     />
 </template>
 ```
@@ -176,7 +175,7 @@ You can also specify which field should be the `id` field for selection:
 
 ## Sortable
 
-The `sortable` prop is used to enable dragging and dropping of rows to rearrange them. When a row is moved, the `sort` event is emitted with the new item order.
+The `sortable` prop is used to enable dragging and dropping of rows to rearrange them. When a row is moved, the `sort` event is emitted with the new item order:
 
 ```vue{11,12}
 <script setup lang="ts">
@@ -194,3 +193,5 @@ function sortItems(items: Items) {
     />
 </template>
 ```
+
+`VTable` uses `sortablejs` to sort the table rows.

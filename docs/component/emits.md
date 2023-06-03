@@ -2,7 +2,7 @@
 
 ## Click
 
-`vtbl` emits a `click` event when a row is clicked. Note that adding the `clickable` class changes the cursor to a pointer when hovering over rows:
+`VTable` emits a `click` event when a row is clicked. Note that adding the `clickable` class changes the cursor to a pointer when hovering over rows:
 
 ```vue{10,11}
 <script setup lang="ts">
@@ -22,7 +22,7 @@ function handleUserClick(user: User) {
 
 ## Sort
 
-vtbl emits a `sort` event when the order of rows changes (if `sortable` is enabled):
+`VTable` emits a `sort` event when the order of rows changes (if `sortable` is enabled):
 
 ```vue{10,11}
 <script setup lang="ts">
