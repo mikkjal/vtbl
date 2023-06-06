@@ -22,7 +22,7 @@ const items = ref([]);
 </script>
 
 <template>
-	<VTable :items="items" />
+    <VTable :items="items" />
 </template>
 ```
 

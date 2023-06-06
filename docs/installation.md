@@ -47,9 +47,9 @@ app.component('VTable', VTable);
 import VTable from 'vtbl';
 
 declare module '@vue/runtime-core' {
-	export interface GlobalComponents {
-		VTable: ComponentPublicInstance<typeof VTable>;
-	}
+    export interface GlobalComponents {
+        VTable: ComponentPublicInstance<typeof VTable>;
+    }
 }
 ```
 

@@ -1,40 +1,40 @@
 .v-table {
-	font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 .v-table th {
-	padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.75rem;
 
-	font-size: 0.8rem;
-	font-weight: 400;
-	text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .v-table td {
-	padding: 0.75rem;
+    padding: 0.75rem;
 }
 
 .v-table.clickable td {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .v-table tr td:first-of-type {
-	border-radius: 8px 0 0 8px;
+    border-radius: 8px 0 0 8px;
 }
 
 .v-table tr td:last-of-type {
-	border-radius: 0 8px 8px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 .v-table tr:nth-child(odd) td {
-	background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .v-table tr:hover td {
-	background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .v-table input {
-	border-radius: 4px;
-	border: 1px solid lightgrey;
+    border-radius: 4px;
+    border: 1px solid lightgrey;
 }

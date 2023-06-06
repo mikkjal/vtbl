@@ -1,16 +1,16 @@
 {
-	"include": ["src/vtbl.ts", "src/helpers/index.ts", "src/components/VTable.vue"],
-	"exclude": ["**/*.spec.ts"],
-	"compilerOptions": {
-		"outDir": "./dist",
-		"esModuleInterop": true
-	},
-	"references": [
-		{
-			"path": "./tsconfig.node.json"
-		},
-		{
-			"path": "./tsconfig.app.json"
-		}
-	]
+    "include": ["src/vtbl.ts", "src/helpers/index.ts", "src/components/VTable.vue"],
+    "exclude": ["**/*.spec.ts"],
+    "compilerOptions": {
+        "outDir": "./dist",
+        "esModuleInterop": true
+    },
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        },
+        {
+            "path": "./tsconfig.app.json"
+        }
+    ]
 }

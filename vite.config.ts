@@ -11,38 +11,37 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [
-		vue(),
-		cssInjectedByJsPlugin(),
-		viteStaticCopy({
-			targets: [
-				{
-					src: './src/assets/table.css',
-					dest: 'css',
-					rename: 'style.css',
-				},
-			],
-		}),
-	],
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url)),
-		},
-	},
-	build: {
-		lib: {
-			entry: resolve(__dirname, './src/vtbl.ts'),
-			name: 'VTable',
-			fileName: 'vtbl',
-			formats: ['es'],
-		},
-		rollupOptions: {
-			external: ['vue'],
-			output: {
-				globals: {
-					vue: 'Vue',
-				},
-			},
-		},
-	},
+    plugins: [
+        vue(),
+        cssInjectedByJsPlugin(),
+        viteStaticCopy({
+            targets: [
+                {
+                    src: './src/assets/table.css',
+                    dest: 'css',
+                    rename: 'style.css',
+                },
+            ],
+        }),
+    ],
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+        },
+    },
+    build: {
+        lib: {
+            entry: resolve(__dirname, './src/vtbl.ts'),
+            name: 'VTable',
+            fileName: 'vtbl',
+        },
+        rollupOptions: {
+            external: ['vue'],
+            output: {
+                globals: {
+                    vue: 'Vue',
+                },
+            },
+        },
+    },
 });
