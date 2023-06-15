@@ -205,34 +205,33 @@ function getItemAtIndex(index: number): Type {
         aria-describedby=""
     >
         <thead v-if="fields.length">
-            <th
-                v-if="sortable"
-                class="w-10"
-            ></th>
-
-            <th
-                v-if="selectable"
-                class="w-10 text-center"
-            >
-                <input
-                    v-model="allRowsAreSelected"
-                    type="checkbox"
-                    @click.stop
-                />
-            </th>
-
-            <template
-                v-for="field in fields"
-                :key="field"
-            >
+            <tr>
                 <th
+                    v-if="sortable"
+                    class="w-10"
+                ></th>
+
+                <th
+                    v-if="selectable"
+                    class="w-10 text-center"
+                >
+                    <input
+                        v-model="allRowsAreSelected"
+                        type="checkbox"
+                        @click.stop
+                    />
+                </th>
+
+                <th
+                    v-for="field in fields"
+                    :key="field"
                     class="whitespace-nowrap text-left"
                     :class="{
-						[field]: true,
-						'orderable': orderable?.includes(field),
-						'text-center': (align as any)?.[field] == 'center',
-						'text-right': (align as any)?.[field] == 'right',
-					}"
+                            [field]: true,
+                            'orderable': orderable?.includes(field),
+                            'text-center': (align as any)?.[field] == 'center',
+                            'text-right': (align as any)?.[field] == 'right',
+                        }"
                 >
                     <span
                         @click="
@@ -241,9 +240,9 @@ function getItemAtIndex(index: number): Type {
                         "
                         class="inline-flex items-center"
                         :class="{
-							'cursor-pointer': orderable?.includes?.(field),
-							'flex-row-reverse': (align as any)?.[field] == 'right',
-						}"
+                                'cursor-pointer': orderable?.includes?.(field),
+                                'flex-row-reverse': (align as any)?.[field] == 'right',
+                            }"
                     >
                         <span>{{ getTitle(field) }}</span>
 
@@ -251,20 +250,20 @@ function getItemAtIndex(index: number): Type {
                             v-if="orderBy && orderable?.includes(field)"
                             class="text-[10px] transition mx-1.5"
                             :class="{
-                            '-rotate-180': orderBy[0] == field && (orderBy as [string, string])[1].toLowerCase() == 'desc',
-                            'opacity-0': orderBy[0] != field,
-                        }"
+                                '-rotate-180': orderBy[0] == field && (orderBy as [string, string])[1].toLowerCase() == 'desc',
+                                'opacity-0': orderBy[0] != field,
+                            }"
                         >
                             ↓
                         </i>
                     </span>
                 </th>
-            </template>
 
-            <slot
-                v-if="$slots.thead"
-                name="thead"
-            />
+                <slot
+                    v-if="$slots.thead"
+                    name="thead"
+                />
+            </tr>
         </thead>
 
         <tbody ref="container">
