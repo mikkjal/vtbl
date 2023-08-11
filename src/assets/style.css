@@ -1,3 +1,114 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.v-table {
+    min-width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.v-table th {
+    padding: 0.5rem 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 400;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.v-table td {
+    padding: 0.75rem;
+}
+
+.v-table.clickable td {
+    cursor: pointer;
+}
+
+.v-table tr td:first-of-type {
+    border-radius: 8px 0 0 8px;
+}
+
+.v-table tr td:last-of-type {
+    border-radius: 0 8px 8px 0;
+}
+
+.v-table tr:nth-child(odd) td {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.v-table tr:hover td {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.v-table .handle {
+    cursor: grab;
+    font-size: 1rem;
+}
+
+.v-table .handle::after {
+    content: '═';
+}
+
+.v-table .selectable,
+.v-table .sortable {
+    width: 1.5rem;
+    text-align: center;
+}
+
+.v-table .orderable {
+    cursor: pointer;
+}
+
+.v-table .orderable::before {
+    display: none;
+    margin-right: 4px;
+}
+
+.v-table .orderable::after {
+    margin-left: 4px;
+}
+
+.v-table .orderable::before,
+.v-table .orderable::after {
+    content: '▾';
+
+    display: inline-block;
+
+    font-size: 1rem;
+
+    transition: 0.15s opacity ease-out, 0.15s transform ease-out;
+}
+
+.v-table .orderable:not(.order-by)::after {
+    opacity: 0;
+}
+
+.v-table .orderable.text-right::after {
+    display: none;
+}
+
+.v-table .orderable:not(.text-right)::before {
+    display: none;
+}
+
+.v-table .orderable:not(.order-by)::before {
+    opacity: 0;
+}
+
+.v-table .orderable.desc::after,
+.v-table .orderable.desc::before {
+    transform: rotate(180deg);
+}
+
+.v-table .text-left {
+    text-align: left;
+}
+
+.v-table .text-center {
+    text-align: center;
+}
+
+.v-table .text-right {
+    text-align: right;
+}

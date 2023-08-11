@@ -28,7 +28,4 @@
 
 | Slot                     | Props          | Description                                                                                                                                                           |
 | :----------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `thead`                  | {}             | A slot for customizing the header of the table. If not provided, a default header will be created based on the `fields` prop.                                         |
-| `handle`                 | {}             | A slot for customizing the handle for sorting items. This slot is only effective when `sortable` prop is `true`.                                                      |
-| `tbody`                  | `{item: Type}` | A slot for customizing the body of the table. If not provided, a default body will be created based on the `items` prop.                                              |
 | `[K in TFields[number]]` | `{item: Type}` | A slot for customizing the content of a specific field in the table. The slot's name should match the field's name, and it receives the corresponding item as a prop. |

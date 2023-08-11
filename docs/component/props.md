@@ -53,6 +53,23 @@ The `align` prop is used to align the contents of the columns. You can align the
 </template>
 ```
 
+## Map
+
+The `map` prop is used to transform the data displayed in the columns:
+
+```vue{6}
+<template>
+    <VTable
+        :items="items"
+        :fields="(['id', 'name', 'email', 'createdAt', 'address.city'] as const)"
+        :map="{
+            'name': (name) => `Dr. ${name}`,
+            'createdAt': formatDate,
+        }"
+    />
+</template>
+```
+
 ## Title
 
 The `title` prop is used to provide custom titles for the columns:

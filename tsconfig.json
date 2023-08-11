@@ -3,7 +3,8 @@
     "exclude": ["**/*.spec.ts"],
     "compilerOptions": {
         "outDir": "./dist",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "downlevelIteration": true
     },
     "references": [
         {

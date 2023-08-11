@@ -39,19 +39,25 @@ const users = ref([]);
 const selectedEmails = ref([]);
 
 onMounted(async () => {
-	const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
 
-	users.value = await response.json();
+    users.value = await response.json();
 });
 </script>
 
-<VTable
-    :items="users"
-    :fields="(['id', 'name', 'username', 'email', 'address.city'] as const)"
-    selectable
-    v-model:selected.email="selectedEmails"
-    sortable
-/>
+<VTable :items="users" :fields="(['id', 'name', 'username', 'email', 'address.city'] as const)" selectable v-model:selected.email="selectedEmails" sortable />
 
-<strong>Selected:</strong> {{ selectedEmails }}
+<strong>Selected:</strong>
+{{ selectedEmails }}
 ```
+
+<style>
+.v-table .handle {
+    cursor: grab;
+    font-size: 1rem;
+}
+
+.v-table .handle::after {
+    content: '═';
+}
+</style>
